@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TableStyled = styled.table`
+export const TableStyled = styled.table`
   display: flexbox;
   border: solid 0.5px white;
   flex-wrap: wrap;
@@ -24,4 +24,8 @@ const TableStyled = styled.table`
   }
 `;
 
-export default TableStyled;
+export const Title = styled.div`
+  text-align: center;
+  color: white;
+  font-family: 'Staatliches', cursive;
+`;

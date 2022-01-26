@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import planetsFetch from '../services/Fetch';
-import TableStyled from './Style';
+import { TableStyled } from './Style';
 
 export default function Table() {
   const [planets, setPlanets] = useState([]);
