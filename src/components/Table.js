@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import planetsFetch from '../services/Fetch';
+import TableStyled from './Style';
 
 export default function Table() {
   const [planets, setPlanets] = useState([]);
@@ -13,7 +14,7 @@ export default function Table() {
   }, [setPlanets]);
 
   return (
-    <table>
+    <TableStyled>
       <thead>
         <tr>
           <th>Name</th>
@@ -50,6 +51,6 @@ export default function Table() {
           </tr>
         ))
       }
-    </table>
+    </TableStyled>
   );
 }
