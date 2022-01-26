@@ -2,14 +2,13 @@ import styled from 'styled-components';
 
 export const TableStyled = styled.table`
   display: flexbox;
-  border: solid 0.5px white;
   flex-wrap: wrap;
   margin-top: 25px;
-  
+  border-spacing: 0;
+
   th, td {
     align-content: center;
-    background-image: url('https://img.freepik.com/fotos-gratis/estrelas-e-galaxia-espaco-ceu-noite-universo-preto-fundo-estrelado-de-starfield-brilhante_146539-2168.jpg?size=626&ext=jpg');
-    background-size: cover;
+    background-color: #090014;
     color: white;
     padding: 10px
   };
@@ -19,8 +18,8 @@ export const TableStyled = styled.table`
     font-family: 'Staatliches', cursive;
   }
 
-  th, td {
-    border: solid 0.5px white;
+  td, th {
+    border-bottom: solid 0.5px white;
   }
 `;
 
@@ -28,4 +27,13 @@ export const Title = styled.div`
   text-align: center;
   color: white;
   font-family: 'Staatliches', cursive;
+`;
+
+export const Input = styled.input`
+  border: solid white 1px;
+  background-color: black;
+  color: white;
+  height: 30px;
+  margin-left: 43%;
+  text-align: center;
 `;
