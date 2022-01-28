@@ -15,8 +15,8 @@ function Provider({ children }) {
     const { value: valor } = target;
     setName(valor);
 
-    setPlanets(planets
-      .filter((plan) => plan.name.toLowerCase().includes(name.toLowerCase())));
+    // setPlanets(planets
+    //   .filter((plan) => plan.name.toLowerCase().includes(name.toLowerCase())));
   };
 
   const handleFilter = ({ target }) => {

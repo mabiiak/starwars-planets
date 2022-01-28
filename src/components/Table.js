@@ -6,10 +6,10 @@ import { TableStyled } from './Style';
 export default function Table() {
   const { planets, setPlanets, filterByName: { name: filtro } } = useContext(Context);
 
-  const att = () => {
-    setPlanets(planets
-      .filter((plan) => plan.name.toLowerCase().includes(filtro.toLowerCase())));
-  };
+  // const att = () => {
+  //   setPlanets(planets
+  //     .filter((plan) => plan.name.toLowerCase().includes(filtro.toLowerCase())));
+  // };
 
   useEffect(() => {
     planetsFetch()
@@ -18,7 +18,7 @@ export default function Table() {
         setPlanets(data);
       });
 
-    att();
+    // att();
   }, [setPlanets]);
 
   return (
@@ -41,23 +41,25 @@ export default function Table() {
         </tr>
       </thead>
       {
-        planets.map((planet) => (
-          <tr key={ planet.name }>
-            <td>{ planet.name }</td>
-            <td>{ planet.rotation_period }</td>
-            <td>{ planet.orbital_period }</td>
-            <td>{ planet.diameter }</td>
-            <td>{ planet.climate }</td>
-            <td>{ planet.gravity }</td>
-            <td>{ planet.terrain }</td>
-            <td>{ planet.surface_water }</td>
-            <td>{ planet.population }</td>
-            <td>{ planet.films }</td>
-            <td>{ planet.created }</td>
-            <td>{ planet.edited }</td>
-            <td>{ planet.url }</td>
-          </tr>
-        ))
+        planets
+          .filter((plan) => plan.name.toLowerCase().includes(filtro.toLowerCase()))
+          .map((planet) => (
+            <tr key={ planet.name }>
+              <td>{ planet.name }</td>
+              <td>{ planet.rotation_period }</td>
+              <td>{ planet.orbital_period }</td>
+              <td>{ planet.diameter }</td>
+              <td>{ planet.climate }</td>
+              <td>{ planet.gravity }</td>
+              <td>{ planet.terrain }</td>
+              <td>{ planet.surface_water }</td>
+              <td>{ planet.population }</td>
+              <td>{ planet.films }</td>
+              <td>{ planet.created }</td>
+              <td>{ planet.edited }</td>
+              <td>{ planet.url }</td>
+            </tr>
+          ))
       }
     </TableStyled>
   );
