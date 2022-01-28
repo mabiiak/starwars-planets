@@ -3,7 +3,9 @@ import { Context } from '../context/Provider';
 import { Input, FilterLine } from './Style';
 
 export default function FormInput() {
-  const { handleChange } = useContext(Context);
+  const {
+    handleChange, handleFilter, filterByNumericValues: [{ column, value, comparison }],
+  } = useContext(Context);
 
   return (
     <form>
@@ -14,7 +16,7 @@ export default function FormInput() {
       />
 
       <FilterLine>
-        <select data-testid="column-filter">
+        <select name="column" data-testid="column-filter" onChange={ handleFilter }>
           <option>population</option>
           <option>orbital_period</option>
           <option>diameter</option>
@@ -22,17 +24,29 @@ export default function FormInput() {
           <option>surface_water</option>
         </select>
 
-        <select data-testid="comparison-filter">
+        <select
+          data-testid="comparison-filter"
+          name="comparison"
+          onChange={ handleFilter }
+        >
           <option>maior que</option>
           <option>menor que</option>
           <option>igual a</option>
         </select>
 
-        <input type="number" placeholder="valor" data-testid="value-filter" />
+        <input
+          type="number"
+          placeholder="valor"
+          name="numero"
+          data-testid="value-filter"
+          onChange={ handleFilter }
+        />
         <button type="button" data-testid="button-filter">
           Filtrar
         </button>
       </FilterLine>
+      {console.log({ column, comparison, value })}
+
     </form>
   );
 }

@@ -7,9 +7,20 @@ function Provider({ children }) {
   const [planets, setPlanets] = useState([]);
   const [name, setName] = useState('');
 
+  const [column, setColumn] = useState('population');
+  const [comparison, setComparison] = useState('maior que');
+  const [value, setValue] = useState(0);
+
   const handleChange = ({ target }) => {
     const { value } = target;
     setName(value);
+  };
+
+  const handleFilter = ({ target }) => {
+    const { name: nome, value } = target;
+    if (nome === 'column') setColumn(value);
+    if (nome === 'numero') setValue(value);
+    if (nome === 'comparison') setComparison(value);
   };
 
   const allState = {
@@ -19,6 +30,17 @@ function Provider({ children }) {
       name,
     },
     handleChange,
+    filterByNumericValues: [
+      {
+        column,
+        comparison,
+        value,
+      },
+    ],
+    setColumn,
+    setValue,
+    setComparison,
+    handleFilter,
   };
 
   return (
