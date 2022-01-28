@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Context } from '../context/Provider';
 import { Input, FilterLine, LineFilter } from './Style';
 
 export default function FormInput() {
   const { handleChange, handleFilter, planets, setPlanets, listFilter,
     filterByNumericValues: [{ column, value, comparison }] } = useContext(Context);
+
+  const [options, attOptions] = useState([
+    'population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water']);
 
   const onClickFilter = () => {
     listFilter.push({ column, value, comparison });
@@ -18,6 +21,8 @@ export default function FormInput() {
     if (comparison === 'igual a') {
       setPlanets(planets.filter((planet) => planet[column] === value));
     }
+
+    attOptions(options.filter((opt) => opt !== column));
   };
 
   return (
@@ -30,11 +35,10 @@ export default function FormInput() {
 
       <FilterLine>
         <select name="column" data-testid="column-filter" onChange={ handleFilter }>
-          <option>population</option>
-          <option>orbital_period</option>
-          <option>diameter</option>
-          <option>rotation_period</option>
-          <option>surface_water</option>
+          {
+            options.map((opt) => <option key={ opt }>{ opt }</option>)
+          }
+
         </select>
 
         <select
