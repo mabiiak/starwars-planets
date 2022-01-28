@@ -3,9 +3,20 @@ import { Context } from '../context/Provider';
 import { Input, FilterLine } from './Style';
 
 export default function FormInput() {
-  const {
-    handleChange, handleFilter, filterByNumericValues: [{ column, value, comparison }],
-  } = useContext(Context);
+  const { handleChange, handleFilter, planets, setPlanets,
+    filterByNumericValues: [{ column, value, comparison }] } = useContext(Context);
+
+  const onClickFilter = () => {
+    if (comparison === 'maior que') {
+      setPlanets(planets.filter((planet) => planet[column] > +value));
+    }
+    if (comparison === 'menor que') {
+      setPlanets(planets.filter((planet) => planet[column] < +value));
+    }
+    if (comparison === 'igual a') {
+      setPlanets(planets.filter((planet) => planet[column] === value));
+    }
+  };
 
   return (
     <form>
@@ -40,13 +51,12 @@ export default function FormInput() {
           name="numero"
           data-testid="value-filter"
           onChange={ handleFilter }
+          value={ value }
         />
-        <button type="button" data-testid="button-filter">
+        <button type="button" data-testid="button-filter" onClick={ onClickFilter }>
           Filtrar
         </button>
       </FilterLine>
-      {console.log({ column, comparison, value })}
-
     </form>
   );
 }

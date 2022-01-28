@@ -14,6 +14,9 @@ function Provider({ children }) {
   const handleChange = ({ target }) => {
     const { value: valor } = target;
     setName(valor);
+
+    setPlanets(planets
+      .filter((plan) => plan.name.toLowerCase().includes(name.toLowerCase())));
   };
 
   const handleFilter = ({ target }) => {
@@ -30,6 +33,7 @@ function Provider({ children }) {
       name,
     },
     handleChange,
+
     filterByNumericValues: [
       {
         column,

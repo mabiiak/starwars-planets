@@ -70,8 +70,13 @@ export const FilterLine = styled.div`
   }
 
   button {
+    background-color: black;
+    color: white;
+    padding-top: 2px;
+  }
+
+  button:active {
     background-color: white;
     color: black;
-    padding-top: 2px;
   }
 `;
