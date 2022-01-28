@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import MyContext from '../context/MyContext';
+import { Context } from '../context/Provider';
 import { Input, FilterLine } from './Style';
 
 export default function FormInput() {
-  const { handleChange } = useContext(MyContext);
+  const { handleChange } = useContext(Context);
 
   return (
     <form>

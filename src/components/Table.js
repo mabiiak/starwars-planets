@@ -1,10 +1,10 @@
 import React, { useEffect, useContext } from 'react';
-import MyContext from '../context/MyContext';
+import { Context } from '../context/Provider';
 import planetsFetch from '../services/Fetch';
 import { TableStyled } from './Style';
 
 export default function Table() {
-  const { planets, setPlanets, filterByName: { name: filtro } } = useContext(MyContext);
+  const { planets, setPlanets, filterByName: { name: filtro } } = useContext(Context);
 
   useEffect(() => {
     planetsFetch()

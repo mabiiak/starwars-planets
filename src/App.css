@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap') ;
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
 body {
-  background-color: black;
+  background-color: #000000;
   background-image: url('./images/planets.jpeg');
-  background-position: 0% 10px;
   background-repeat: no-repeat;
+  background-position: 0% 10px;
   color: white;
 }
