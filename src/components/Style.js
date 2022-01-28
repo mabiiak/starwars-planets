@@ -1,13 +1,5 @@
 import styled from 'styled-components';
 
-export const BodyStyles = styled.body`
-  background-color: rgb(0,0,0);
-  background-image: url('./images/planets.jpeg');
-  background-position: 0 10px;
-  background-repeat: no-repeat;
-  color: white;
-`;
-
 export const TableStyled = styled.table`
   display: flexbox;
   flex-wrap: wrap;
@@ -53,7 +45,7 @@ export const Input = styled.input`
 export const FilterLine = styled.div`
   display: flexbox;
   margin-left: 17%;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   
   select, option, input, button {
     border: solid white 1px;
@@ -78,5 +70,33 @@ export const FilterLine = styled.div`
   button:active {
     background-color: white;
     color: black;
+  }
+`;
+
+export const LineFilter = styled.div`
+  color: white;
+  height: 30px;
+  margin-left: 17%;
+
+  p {
+    border: solid 1px white;
+    display: inline-block;
+    height: 25px;
+    padding-top: 5px;
+    text-align: center;
+    width: 200px;
+  };
+
+  button {
+    border: none;
+    background-color: #590e0c;
+    color: white;
+    height: 33px;
+    padding-bottom: 2px;
+    width: 200px;
+  };
+
+  button: active {
+    background-color: red;
   }
 `;

@@ -11,6 +11,8 @@ function Provider({ children }) {
   const [comparison, setComparison] = useState('maior que');
   const [value, setValue] = useState(0);
 
+  const [listFilter, addAllFilter] = useState([]);
+
   const handleChange = ({ target }) => {
     const { value: valor } = target;
     setName(valor);
@@ -45,6 +47,9 @@ function Provider({ children }) {
     setValue,
     setComparison,
     handleFilter,
+
+    listFilter,
+    addAllFilter,
   };
 
   return (

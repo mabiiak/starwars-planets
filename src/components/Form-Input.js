@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import { Context } from '../context/Provider';
-import { Input, FilterLine } from './Style';
+import { Input, FilterLine, LineFilter } from './Style';
 
 export default function FormInput() {
-  const { handleChange, handleFilter, planets, setPlanets,
+  const { handleChange, handleFilter, planets, setPlanets, listFilter,
     filterByNumericValues: [{ column, value, comparison }] } = useContext(Context);
 
   const onClickFilter = () => {
+    listFilter.push({ column, value, comparison });
+
     if (comparison === 'maior que') {
       setPlanets(planets.filter((planet) => planet[column] > +value));
     }
@@ -57,6 +59,19 @@ export default function FormInput() {
           Filtrar
         </button>
       </FilterLine>
+
+      {
+        listFilter !== [] && (
+          listFilter.map((filter) => (
+            <LineFilter key={ filter.column }>
+              <p>{ filter.column }</p>
+              <p>{ filter.comparison }</p>
+              <p>{ filter.value }</p>
+              <button type="button">X</button>
+            </LineFilter>
+          ))
+        )
+      }
     </form>
   );
 }
