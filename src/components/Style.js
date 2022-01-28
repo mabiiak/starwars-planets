@@ -36,8 +36,34 @@ export const Input = styled.input`
   border: solid white 1px;
   color: black;
   height: 30px;
-  margin-left: 35%;
-  margin-bottom: 30px;
+  margin-left: 17%;
+  margin-bottom: 10px;
   text-align: center;
-  width: 400px;
+  width: 800px;
+`;
+
+export const FilterLine = styled.div`
+  display: flexbox;
+  margin-left: 17%;
+  margin-bottom: 40px;
+  
+  select, option, input, button {
+    border: solid white 1px;
+    background-color: black;
+    color: white;
+    height: 30px;
+    text-align: center;
+    width: 200px;
+  };
+
+  input {
+    height: 25px;
+    padding-top: 2px;
+  }
+
+  button {
+    background-color: white;
+    color: black;
+    padding-top: 2px;
+  }
 `;
