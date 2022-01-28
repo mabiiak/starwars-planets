@@ -19,9 +19,7 @@ export default function Table() {
       });
 
     att();
-  }, []);
-
-  console.log(superFilter);
+  }, [setPlanets]);
 
   return (
     <TableStyled>
