@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const BodyStyles = styled.body`
+  background-color: rgb(0,0,0);
+  background-image: url('./images/planets.jpeg');
+  background-position: 0 10px;
+  background-repeat: no-repeat;
+  color: white;
+`;
+
 export const TableStyled = styled.table`
   display: flexbox;
   flex-wrap: wrap;
@@ -67,3 +75,4 @@ export const FilterLine = styled.div`
     padding-top: 2px;
   }
 `;
+
