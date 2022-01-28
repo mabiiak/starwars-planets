@@ -12,15 +12,15 @@ function Provider({ children }) {
   const [value, setValue] = useState(0);
 
   const handleChange = ({ target }) => {
-    const { value } = target;
-    setName(value);
+    const { value: valor } = target;
+    setName(valor);
   };
 
   const handleFilter = ({ target }) => {
-    const { name: nome, value } = target;
-    if (nome === 'column') setColumn(value);
-    if (nome === 'numero') setValue(value);
-    if (nome === 'comparison') setComparison(value);
+    const { name: nome, value: valor } = target;
+    if (nome === 'column') setColumn(valor);
+    if (nome === 'numero') setValue(valor);
+    if (nome === 'comparison') setComparison(valor);
   };
 
   const allState = {
